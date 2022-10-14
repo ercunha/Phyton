@@ -1,20 +1,26 @@
-# Faça um programa que leia um número Inteiro qualquer e mostre na tela a sua tabuada.
+# Tabuada
 import sys
 
+# Realiza o calculo da tabuada
+def CalcularTabuada(numero,max):
+    for i in range(max+1):
+        multiplicacao = numero*i
+        print('{0} x {1} = {2} ' .format(numero,i,multiplicacao))
 
-def Calcula(numero,ate):
-    max = ate+1
-    for i in range(max):
-        print('{0} X {1} = {2}' .format(numero,i,i*numero))
-
+#Força a primeira entrada no laço de repetição
 op = 'S'
-while(op== 'S'):
-    numero = int(input('\n Informe o número que deseja retornar a tabuada: '))
-    ate = int(input('Informe o último valor a ser calculado na tabuada: '))
 
-    print(Calcula(numero,ate))
+# Enquanto a resposta for s repete o laço
+while(op == 'S'):
+    numero = int(input('\n Informe o número que quer saber a tabuada: '))
+    max = int(input('Informe o valor máximo que deseja saber: ' ))
+    CalcularTabuada(numero,max)
 
-    op = input('\n Deseja calcular a tabuada de outro número? ').upper()
+    op = input('\n Deseja calcular a tabuada de outro número ? ').upper()
+
+# Se não, finaliza o programa
 else:
-    print("Saindo da aplicação...")
+    print("\n Finalizando...")
     sys.exit()
+
+
