@@ -35,10 +35,16 @@ while op =='S':
             maior_peso = p[1]
             mais_pesado.clear()
             mais_pesado.append(p)
-        if p[1] < menor_peso:
+        #Se for a primeira ocorrência do menor peso adiciono
+        if  len(menos_pesado) == 0:
             menor_peso = p[1]
             menos_pesado.clear()
             menos_pesado.append(p)
+        else:
+            if p[1] < menor_peso:
+                menor_peso = p[1]
+                menos_pesado.clear()
+                menos_pesado.append(p)
 
     print('='*30)
     print(f'Total de pessoas cadastradas:{total_pessoas} pessoas')
